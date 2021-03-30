@@ -14,6 +14,7 @@ export default () => {
       state: 'filling',
       valid: false,
       error: null,
+      isSuccess: false,
     },
     feeds: [],
     posts: [],
@@ -35,6 +36,11 @@ export default () => {
 
     const error = validateLink(link, watchedState.feeds);
     watchedState.rssForm.error = error;
+
+    if (error) {
+      watchedState.rssForm.isSuccess = false;
+    }
+
     watchedState.rssForm.valid = !error;
 
     if (watchedState.rssForm.valid) {
@@ -69,11 +75,13 @@ export default () => {
 
           watchedState.feeds.push(newFeed);
           watchedState.uiState.activeFeedId = feedId;
+          watchedState.rssForm.isSuccess = true;
 
           form.reset();
           input.focus();
         })
         .catch(() => {
+          watchedState.rssForm.isSuccess = false;
           watchedState.rssForm.error = 'Something went wrong';
         })
         .finally(() => {

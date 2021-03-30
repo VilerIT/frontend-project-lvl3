@@ -51,6 +51,8 @@ const render = (state) => {
   const feedback = document.querySelector('.feedback');
   const { activeFeedId } = state.uiState;
 
+  feedback.textContent = '';
+
   if (state.rssForm.error) {
     input.classList.add('is-invalid');
     feedback.classList.add('text-danger');
@@ -58,7 +60,13 @@ const render = (state) => {
   } else {
     input.classList.remove('is-invalid');
     feedback.classList.remove('text-danger');
-    feedback.textContent = '';
+  }
+
+  if (state.rssForm.isSuccess) {
+    feedback.classList.add('text-success');
+    feedback.textContent = 'RSS successfully loaded';
+  } else {
+    feedback.classList.remove('text-success');
   }
 
   if (state.feeds.length > 0) {
