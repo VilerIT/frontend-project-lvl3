@@ -10,6 +10,7 @@ const buildPosts = (posts) => {
   posts.forEach((post) => {
     const li = document.createElement('li');
     li.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-start');
+    li.dataset.id = post.id;
 
     li.innerHTML = `
     <a href="${post.url}" class="font-weight-bold" target="_blank" rel="noopener noreferrer">
@@ -34,6 +35,7 @@ const buildFeeds = (feeds) => {
   feeds.forEach((feed) => {
     const li = document.createElement('li');
     li.classList.add('list-group-item');
+    li.dataset.id = feed.id;
 
     li.innerHTML = `
     <h3>${feed.title}</h3>
