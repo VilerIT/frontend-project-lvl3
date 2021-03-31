@@ -2,8 +2,8 @@
 
 import axios from 'axios';
 
-import validateLink from './validateLink.js';
-import parseRSS from './parseRSS.js';
+import validateLink from './validate-link.js';
+import parseRSS from './parse-rss.js';
 
 const routes = {
   allorigins: (url) => `https://hexlet-allorigins.herokuapp.com/get?url=${encodeURIComponent(url)}`,
