@@ -16,7 +16,7 @@ const buildPosts = (posts, i18nInstance) => {
     <a href="${post.url}" class="font-weight-bold" target="_blank" rel="noopener noreferrer">
       ${post.title}
     </a>
-    <button type="button" class="btn btn-primary btn-sm">View</button>
+    <button type="button" class="btn btn-primary btn-sm">${i18nInstance.t('view')}</button>
     `;
 
     ul.append(li);

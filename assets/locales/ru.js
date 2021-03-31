@@ -7,5 +7,6 @@ export default {
       'RSS already exists': 'RSS уже существует',
     },
     success: 'RSS успешно загружен',
+    view: 'Просмотр',
   },
 };

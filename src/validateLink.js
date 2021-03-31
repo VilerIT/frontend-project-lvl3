@@ -13,7 +13,6 @@ export default (link, feeds) => {
     schema.validateSync(link);
     return null;
   } catch (e) {
-    console.dir(e);
     return e.message;
   }
 };

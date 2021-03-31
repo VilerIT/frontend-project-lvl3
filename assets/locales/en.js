@@ -7,5 +7,6 @@ export default {
       'RSS already exists': 'RSS already exists',
     },
     success: 'RSS successfully loaded',
+    view: 'View',
   },
 };
