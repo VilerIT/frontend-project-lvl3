@@ -1,8 +1,8 @@
 import onChange from 'on-change';
 
-const buildPosts = (posts) => {
+const buildPosts = (posts, i18nInstance) => {
   const postsContainer = document.querySelector('.posts');
-  postsContainer.innerHTML = '<h2>Posts</h2>';
+  postsContainer.innerHTML = `<h2>${i18nInstance.t('posts')}</h2>`;
 
   const ul = document.createElement('ul');
   ul.classList.add('list-group');
@@ -25,9 +25,9 @@ const buildPosts = (posts) => {
   postsContainer.append(ul);
 };
 
-const buildFeeds = (feeds) => {
+const buildFeeds = (feeds, i18nInstance) => {
   const feedsContainer = document.querySelector('.feeds');
-  feedsContainer.innerHTML = '<h2>Feeds</h2>';
+  feedsContainer.innerHTML = `<h2>${i18nInstance.t('feeds')}</h2>`;
 
   const ul = document.createElement('ul');
   ul.classList.add('list-group', 'mb-5');
@@ -48,7 +48,7 @@ const buildFeeds = (feeds) => {
   feedsContainer.append(ul);
 };
 
-const render = (state) => {
+const render = (state, i18nInstance) => {
   const input = document.querySelector('.form-control');
   const feedback = document.querySelector('.feedback');
   const { activeFeedId } = state.uiState;
@@ -58,7 +58,7 @@ const render = (state) => {
   if (state.rssForm.error) {
     input.classList.add('is-invalid');
     feedback.classList.add('text-danger');
-    feedback.textContent = state.rssForm.error;
+    feedback.textContent = i18nInstance.t(`errors.${state.rssForm.error}`);
   } else {
     input.classList.remove('is-invalid');
     feedback.classList.remove('text-danger');
@@ -66,24 +66,24 @@ const render = (state) => {
 
   if (state.rssForm.isSuccess) {
     feedback.classList.add('text-success');
-    feedback.textContent = 'RSS successfully loaded';
+    feedback.textContent = i18nInstance.t('success');
   } else {
     feedback.classList.remove('text-success');
   }
 
   if (state.feeds.length > 0) {
-    buildFeeds(state.feeds);
+    buildFeeds(state.feeds, i18nInstance);
   }
 
   if (activeFeedId) {
     const posts = state.posts
       .filter((post) => (post.feedId === activeFeedId));
 
-    buildPosts(posts);
+    buildPosts(posts, i18nInstance);
   }
 };
 
-export default (state) => {
+export default (state, i18nInstance) => {
   const submitButton = document.querySelector('[type="submit"]');
   const input = document.querySelector('.form-control');
 
@@ -102,7 +102,7 @@ export default (state) => {
           throw new Error(`Unexpected state: ${value}`);
       }
     }
-    render(watchedState);
+    render(watchedState, i18nInstance);
   });
 
   return watchedState;

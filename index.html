@@ -5,6 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RSS Aggregator</title>
+  <style>
+    .language-selector {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
 </head>
 <body class="d-flex flex-column min-vh-100">
   <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
@@ -21,6 +28,10 @@
   </div>
   <main class="flex-grow-1">
     <section class="container-fluid bg-dark p-5">
+      <select class="language-selector" data-width="fit">
+        <option>English</option>
+        <option>Русский</option>
+      </select>
       <div class="row">
         <div class="col-md-10 col-lg-8 mx-auto text-white">
           <h1 class="display-3">RSS Aggregator</h1>
