@@ -3,8 +3,10 @@ export default {
     feeds: 'Feeds',
     posts: 'Posts',
     errors: {
-      'this must be a valid URL': 'The link must be a valid URL',
-      'RSS already exists': 'RSS already exists',
+      invalidURL: 'The link must be a valid URL',
+      rssExists: 'RSS already exists',
+      netError: 'Network error, check your Internet connection',
+      invalidRSS: 'Invalid RSS source',
     },
     success: 'RSS successfully loaded',
     view: 'View',

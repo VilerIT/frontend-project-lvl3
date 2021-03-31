@@ -3,8 +3,10 @@ export default {
     feeds: 'Фиды',
     posts: 'Посты',
     errors: {
-      'this must be a valid URL': 'Ссылка должна быть валидным URL',
-      'RSS already exists': 'RSS уже существует',
+      invalidURL: 'Ссылка должна быть валидным URL',
+      rssExists: 'RSS уже существует',
+      netError: 'Ошибка сети, проверьте свое Интернет-соединение',
+      invalidRSS: 'Неправильный источник RSS',
     },
     success: 'RSS успешно загружен',
     view: 'Просмотр',

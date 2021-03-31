@@ -58,7 +58,7 @@ const render = (state, i18nInstance) => {
   if (state.rssForm.error) {
     input.classList.add('is-invalid');
     feedback.classList.add('text-danger');
-    feedback.textContent = i18nInstance.t(`errors.${state.rssForm.error}`);
+    feedback.textContent = state.rssForm.error;
   } else {
     input.classList.remove('is-invalid');
     feedback.classList.remove('text-danger');
@@ -76,10 +76,7 @@ const render = (state, i18nInstance) => {
   }
 
   if (activeFeedId) {
-    const posts = state.posts
-      .filter((post) => (post.feedId === activeFeedId));
-
-    buildPosts(posts, i18nInstance);
+    buildPosts(state.posts, i18nInstance);
   }
 };
 

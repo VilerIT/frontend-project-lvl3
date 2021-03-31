@@ -33,7 +33,7 @@ export default async () => {
   const languageSelector = document.querySelector('.language-selector');
 
   form.addEventListener('submit', (e) => {
-    handleAddFeed(e, watchedState);
+    handleAddFeed(e, watchedState, i18nInstance);
   });
 
   languageSelector.addEventListener('change', (e) => {
