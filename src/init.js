@@ -13,6 +13,9 @@ export default async () => {
       error: null,
       isSuccess: false,
     },
+    updateProcess: {
+      state: 'idle',
+    },
     feeds: [],
     posts: [],
   };

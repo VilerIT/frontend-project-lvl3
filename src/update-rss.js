@@ -28,5 +28,8 @@ const updateRSS = (state) => {
 export default (link, state) => {
   links.push(link);
 
-  setTimeout(() => updateRSS(state), 5000);
+  if (state.updateProcess.state === 'idle') {
+    state.updateProcess.state = 'running';
+    setTimeout(() => updateRSS(state), 5000);
+  }
 };
