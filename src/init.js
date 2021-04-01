@@ -43,13 +43,15 @@ export default () => {
 
   const form = document.querySelector('.rss-form');
 
-  const languageSelector = document.querySelector('.language-selector');
+  const languageSelectors = document.querySelectorAll('[data-lang]');
 
   form.addEventListener('submit', (e) => {
     handleAddFeed(e, watchedState, i18nInstance);
   });
 
-  languageSelector.addEventListener('change', (e) => {
-    handleSelectLanguage(e, watchedState, i18nInstance);
+  languageSelectors.forEach((languageSelector) => {
+    languageSelector.addEventListener('click', (e) => {
+      handleSelectLanguage(e, watchedState, i18nInstance);
+    });
   });
 };

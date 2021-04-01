@@ -50,9 +50,17 @@ export const handleAddFeed = (e, state, i18nInstance) => {
 };
 
 export const handleSelectLanguage = (e, state, i18nInstance) => {
-  const lang = (e.target.value === 'English' ? 'en' : 'ru');
-  i18nInstance.changeLanguage(lang);
-  state.lang = lang;
+  i18nInstance.changeLanguage(e.target.dataset.lang);
+  state.lang = e.target.dataset.lang;
+
+  const buttonGroup = e.target.closest('.btn-group');
+  const active = buttonGroup.querySelector('.active');
+
+  active.classList.remove('btn-light');
+  active.classList.add('btn-outline-light');
+
+  e.target.parentElement.classList.remove('btn-outline-light');
+  e.target.parentElement.classList.add('btn-light');
 };
 
 export const handleViewPost = (post) => {
