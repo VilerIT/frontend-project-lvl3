@@ -42,7 +42,7 @@ const buildFeeds = (feeds, i18nInstance) => {
     <p>${feed.desc}</p>
     `;
 
-    ul.prepend(li);
+    ul.append(li);
   });
 
   feedsContainer.append(ul);
@@ -51,7 +51,6 @@ const buildFeeds = (feeds, i18nInstance) => {
 const render = (state, i18nInstance) => {
   const input = document.querySelector('.form-control');
   const feedback = document.querySelector('.feedback');
-  const { activeFeedId } = state.uiState;
 
   feedback.textContent = '';
 
@@ -73,9 +72,6 @@ const render = (state, i18nInstance) => {
 
   if (state.feeds.length > 0) {
     buildFeeds(state.feeds, i18nInstance);
-  }
-
-  if (activeFeedId) {
     buildPosts(state.posts, i18nInstance);
   }
 };

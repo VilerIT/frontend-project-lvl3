@@ -15,9 +15,6 @@ export default async () => {
     },
     feeds: [],
     posts: [],
-    uiState: {
-      activeFeedId: null,
-    },
   };
 
   const i18nInstance = i18next.createInstance();

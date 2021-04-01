@@ -2,6 +2,7 @@
 
 import validateLink from './validate-link.js';
 import loadRSS from './load-rss.js';
+import updateRSS from './update-rss.js';
 
 export const handleAddFeed = (e, state, i18nInstance) => {
   e.preventDefault();
@@ -21,7 +22,26 @@ export const handleAddFeed = (e, state, i18nInstance) => {
   if (state.rssForm.valid) {
     state.rssForm.state = 'pending';
 
-    loadRSS(e, link, state, i18nInstance);
+    loadRSS(link, state)
+      .then((rss) => {
+        state.rssForm.state = 'filling';
+
+        state.feeds.unshift(rss.feed);
+        state.posts = [...rss.posts, ...state.posts];
+
+        state.rssForm.isSuccess = true;
+
+        updateRSS(link, state);
+
+        e.target.reset();
+      })
+      .catch((err) => {
+        if (err.isAxiosError) {
+          state.rssForm.error = i18nInstance.t('errors.netError');
+        } else {
+          state.rssForm.error = i18nInstance.t('errors.invalidRSS');
+        }
+      });
   }
 };
 
