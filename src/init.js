@@ -1,10 +1,11 @@
 import i18next from 'i18next';
+import { setLocale } from 'yup';
 
 import resources from '../assets/locales/index.js';
 import { handleAddFeed, handleSelectLanguage } from './handlers.js';
 import initView from './view.js';
 
-export default async () => {
+export default () => {
   const state = {
     lang: 'ru',
     rssForm: {
@@ -24,9 +25,18 @@ export default async () => {
   };
 
   const i18nInstance = i18next.createInstance();
-  await i18nInstance.init({
+  i18nInstance.init({
     lng: state.lang,
     resources,
+  }).then(() => {
+    setLocale({
+      mixed: {
+        notOneOf: () => i18nInstance.t('errors.rssExists'),
+      },
+      string: {
+        url: () => i18nInstance.t('errors.invalidURL'),
+      },
+    });
   });
 
   const watchedState = initView(state, i18nInstance);

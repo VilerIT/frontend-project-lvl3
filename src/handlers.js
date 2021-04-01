@@ -12,7 +12,7 @@ export const handleAddFeed = (e, state, i18nInstance) => {
   const formData = new FormData(e.target);
   const link = formData.get('url');
 
-  const error = validateLink(link, state.feeds, i18nInstance);
+  const error = validateLink(link, state.feeds);
   state.rssForm.error = error;
 
   if (error) {
@@ -40,7 +40,7 @@ export const handleAddFeed = (e, state, i18nInstance) => {
         if (err.isAxiosError) {
           state.rssForm.error = i18nInstance.t('errors.netError');
         } else {
-          state.rssForm.error = i18nInstance.t('errors.invalidRSS');
+          state.rssForm.error = err.message;
         }
       })
       .finally(() => {
