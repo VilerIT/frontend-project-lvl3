@@ -6,7 +6,7 @@ import initView from './view.js';
 
 export default async () => {
   const state = {
-    lang: 'en',
+    lang: 'ru',
     rssForm: {
       state: 'filling',
       valid: false,
