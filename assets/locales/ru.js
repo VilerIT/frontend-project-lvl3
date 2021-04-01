@@ -9,6 +9,10 @@ export default {
       invalidRSS: 'Неправильный источник RSS',
     },
     success: 'RSS успешно загружен',
-    view: 'Просмотр',
+    buttons: {
+      view: 'Просмотр',
+      close: 'Закрыть',
+      readArticle: 'Читать полностью',
+    },
   },
 };

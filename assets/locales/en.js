@@ -9,6 +9,10 @@ export default {
       invalidRSS: 'Invalid RSS source',
     },
     success: 'RSS successfully loaded',
-    view: 'View',
+    buttons: {
+      view: 'View',
+      close: 'Close',
+      readArticle: 'Read the article',
+    },
   },
 };

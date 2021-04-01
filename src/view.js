@@ -1,5 +1,7 @@
 import onChange from 'on-change';
 
+import { handleViewPost, handleCloseModal } from './handlers.js';
+
 const buildPosts = (state, posts, i18nInstance) => {
   const postsContainer = document.querySelector('.posts');
   postsContainer.innerHTML = `<h2>${i18nInstance.t('posts')}</h2>`;
@@ -18,15 +20,24 @@ const buildPosts = (state, posts, i18nInstance) => {
     <a href="${post.url}" class="${isViewed ? 'font-weight-normal' : 'font-weight-bold'}" target="_blank" rel="noopener noreferrer">
       ${post.title}
     </a>
-    <button type="button" class="btn btn-primary btn-sm">${i18nInstance.t('view')}</button>
+    <button type="button" class="btn btn-primary btn-sm">${i18nInstance.t('buttons.view')}</button>
     `;
 
     const a = li.querySelector('a');
+    const button = li.querySelector('button');
 
     a.addEventListener('click', () => {
       if (!isViewed) {
         state.uiState.viewedPostsIds.push(post.id);
       }
+    });
+
+    button.addEventListener('click', () => {
+      if (!isViewed) {
+        state.uiState.viewedPostsIds.push(post.id);
+      }
+
+      handleViewPost(post);
     });
 
     ul.append(li);
@@ -84,6 +95,16 @@ const render = (state, i18nInstance) => {
     buildFeeds(state.feeds, i18nInstance);
     buildPosts(state, state.posts, i18nInstance);
   }
+
+  const fullArticleButton = document.querySelector('.full-article');
+  const closeButtons = document.querySelectorAll('[data-dismiss="modal"]');
+
+  fullArticleButton.textContent = i18nInstance.t('buttons.readArticle');
+  closeButtons[1].textContent = i18nInstance.t('buttons.close');
+
+  closeButtons.forEach((closeButton) => {
+    closeButton.addEventListener('click', handleCloseModal);
+  });
 };
 
 export default (state, i18nInstance) => {
