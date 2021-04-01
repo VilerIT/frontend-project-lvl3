@@ -40,7 +40,7 @@ export const handleAddFeed = (e, state, i18nInstance) => {
         if (err.isAxiosError) {
           state.rssForm.error = i18nInstance.t('errors.netError');
         } else {
-          state.rssForm.error = err.message;
+          state.rssForm.error = i18nInstance.t('errors.invalidRSS');
         }
       })
       .finally(() => {
