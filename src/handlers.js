@@ -24,8 +24,6 @@ export const handleAddFeed = (e, state, i18nInstance) => {
 
     loadRSS(link, state)
       .then((rss) => {
-        state.rssForm.state = 'filling';
-
         state.feeds.unshift(rss.feed);
         state.posts = [...rss.posts, ...state.posts];
 
@@ -36,11 +34,15 @@ export const handleAddFeed = (e, state, i18nInstance) => {
         e.target.reset();
       })
       .catch((err) => {
+        state.rssForm.isSuccess = false;
         if (err.isAxiosError) {
           state.rssForm.error = i18nInstance.t('errors.netError');
         } else {
           state.rssForm.error = i18nInstance.t('errors.invalidRSS');
         }
+      })
+      .finally(() => {
+        state.rssForm.state = 'filling';
       });
   }
 };
