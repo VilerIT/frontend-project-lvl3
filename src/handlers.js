@@ -15,9 +15,7 @@ export const handleAddFeed = (e, state, i18nInstance) => {
   const error = validateLink(link, state.feeds);
   state.form.error = error;
 
-  if (error) {
-    state.form.isSuccess = false;
-  }
+  state.form.isSuccess = false;
 
   if (!state.form.error) {
     state.form.state = 'pending';
