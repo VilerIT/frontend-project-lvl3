@@ -116,6 +116,7 @@ export default (state, i18nInstance) => {
         feedback.classList.remove('text-danger');
       }
     } else if (path === 'form.isSuccess') {
+      feedback.textContent = '';
       if (value) {
         feedback.classList.add('text-success');
         feedback.textContent = i18nInstance.t('success');
@@ -123,10 +124,10 @@ export default (state, i18nInstance) => {
         feedback.classList.remove('text-success');
       }
     } else if (path === 'lang') {
-      if (state.form.isSuccess) {
-        feedback.textContent = i18nInstance.t('success');
-      } else if (state.form.error) {
+      if (state.form.error) {
         feedback.textContent = state.form.error;
+      } else if (state.form.isSuccess) {
+        feedback.textContent = i18nInstance.t('success');
       }
     } else {
       render(watchedState, i18nInstance);
