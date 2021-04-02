@@ -12,14 +12,14 @@ export const handleAddFeed = (e, state, i18nInstance) => {
   const formData = new FormData(e.target);
   const link = formData.get('url');
 
+  state.form.state = 'pending';
+
   const error = validateLink(link, state.feeds);
   state.form.error = error;
 
   state.form.isSuccess = false;
 
   if (!state.form.error) {
-    state.form.state = 'pending';
-
     console.log(link);
 
     loadRSS(link)
@@ -45,6 +45,8 @@ export const handleAddFeed = (e, state, i18nInstance) => {
         console.log(JSON.stringify(state));
         state.form.state = 'filling';
       });
+  } else {
+    state.form.state = 'filling';
   }
 };
 
