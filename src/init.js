@@ -8,9 +8,8 @@ import initView from './view.js';
 export default () => {
   const state = {
     lang: 'ru',
-    rssForm: {
+    form: {
       state: 'filling',
-      valid: false,
       error: null,
       isSuccess: false,
     },

@@ -70,27 +70,6 @@ const buildFeeds = (feeds, i18nInstance) => {
 };
 
 const render = (state, i18nInstance) => {
-  const input = document.querySelector('.form-control');
-  const feedback = document.querySelector('.feedback');
-
-  feedback.textContent = '';
-
-  if (state.rssForm.error) {
-    input.classList.add('is-invalid');
-    feedback.classList.add('text-danger');
-    feedback.textContent = state.rssForm.error;
-  } else {
-    input.classList.remove('is-invalid');
-    feedback.classList.remove('text-danger');
-  }
-
-  if (state.rssForm.isSuccess) {
-    feedback.classList.add('text-success');
-    feedback.textContent = i18nInstance.t('success');
-  } else {
-    feedback.classList.remove('text-success');
-  }
-
   if (state.feeds.length > 0) {
     buildFeeds(state.feeds, i18nInstance);
     buildPosts(state, state.posts, i18nInstance);
@@ -110,9 +89,10 @@ const render = (state, i18nInstance) => {
 export default (state, i18nInstance) => {
   const submitButton = document.querySelector('[type="submit"]');
   const input = document.querySelector('.form-control');
+  const feedback = document.querySelector('.feedback');
 
   const watchedState = onChange(state, (path, value) => {
-    if (path === 'rssForm.state') {
+    if (path === 'form.state') {
       switch (value) {
         case 'filling':
           submitButton.disabled = false;
@@ -125,8 +105,26 @@ export default (state, i18nInstance) => {
         default:
           throw new Error(`Unexpected state: ${value}`);
       }
+    } else if (path === 'form.error') {
+      feedback.textContent = '';
+      if (value) {
+        input.classList.add('is-invalid');
+        feedback.classList.add('text-danger');
+        feedback.textContent = state.form.error;
+      } else {
+        input.classList.remove('is-invalid');
+        feedback.classList.remove('text-danger');
+      }
+    } else if (path === 'form.isSuccess') {
+      if (value) {
+        feedback.classList.add('text-success');
+        feedback.textContent = i18nInstance.t('success');
+      } else {
+        feedback.classList.remove('text-success');
+      }
+    } else {
+      render(watchedState, i18nInstance);
     }
-    render(watchedState, i18nInstance);
   });
 
   return watchedState;

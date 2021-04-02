@@ -13,41 +13,39 @@ export const handleAddFeed = (e, state, i18nInstance) => {
   const link = formData.get('url');
 
   const error = validateLink(link, state.feeds);
-  state.rssForm.error = error;
+  state.form.error = error;
 
   if (error) {
-    state.rssForm.isSuccess = false;
+    state.form.isSuccess = false;
   }
 
-  state.rssForm.valid = !error;
-
-  if (state.rssForm.valid) {
-    state.rssForm.state = 'pending';
+  if (!state.form.error) {
+    state.form.state = 'pending';
 
     console.log(link);
-    console.log(JSON.stringify(state));
 
     loadRSS(link)
       .then((rss) => {
         state.feeds.unshift(rss.feed);
         state.posts = [...rss.posts, ...state.posts];
 
-        state.rssForm.isSuccess = true;
+        state.form.isSuccess = true;
 
         updateRSS(link, state);
 
         e.target.reset();
       })
       .catch((err) => {
-        state.rssForm.isSuccess = false;
+        state.form.isSuccess = false;
         if (err.isAxiosError) {
-          state.rssForm.error = i18nInstance.t('errors.netError');
+          state.form.error = i18nInstance.t('errors.netError');
         } else {
-          state.rssForm.error = i18nInstance.t('errors.invalidRSS');
+          state.form.error = i18nInstance.t('errors.invalidRSS');
         }
       })
       .finally(() => {
-        state.rssForm.state = 'filling';
+        console.log(JSON.stringify(state));
+        state.form.state = 'filling';
       });
   }
 };
