@@ -122,6 +122,12 @@ export default (state, i18nInstance) => {
       } else {
         feedback.classList.remove('text-success');
       }
+    } else if (path === 'lang') {
+      if (state.form.isSuccess) {
+        feedback.textContent = i18nInstance.t('success');
+      } else if (state.form.error) {
+        feedback.textContent = state.form.error;
+      }
     } else {
       render(watchedState, i18nInstance);
     }
