@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-
 import axios from 'axios';
 
 import parseRSS from './parse-rss.js';

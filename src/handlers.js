@@ -25,6 +25,7 @@ export const handleAddFeed = (e, state, i18nInstance) => {
     state.rssForm.state = 'pending';
 
     console.log(link);
+    console.log(JSON.stringify(state));
 
     loadRSS(link)
       .then((rss) => {
