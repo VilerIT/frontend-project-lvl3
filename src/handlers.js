@@ -24,7 +24,7 @@ export const handleAddFeed = (e, state, i18nInstance) => {
   if (state.rssForm.valid) {
     state.rssForm.state = 'pending';
 
-    loadRSS(link, state)
+    loadRSS(link)
       .then((rss) => {
         state.feeds.unshift(rss.feed);
         state.posts = [...rss.posts, ...state.posts];
