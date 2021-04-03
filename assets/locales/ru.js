@@ -6,7 +6,7 @@ export default {
       invalidURL: 'Ссылка должна быть валидным URL',
       rssExists: 'RSS уже существует',
       netError: 'Ошибка сети, проверьте свое Интернет-соединение',
-      invalidRSS: 'Неправильный источник RSS',
+      invalidRSS: 'Ресурс не содержит валидный RSS',
     },
     success: 'RSS успешно загружен',
     buttons: {

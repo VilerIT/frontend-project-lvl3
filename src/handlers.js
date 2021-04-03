@@ -16,8 +16,6 @@ export const handleAddFeed = (e, state, i18nInstance) => {
   state.form.error = error;
 
   if (!error) {
-    console.log(link);
-
     state.form.state = 'pending';
 
     loadRSS(link)
@@ -38,9 +36,6 @@ export const handleAddFeed = (e, state, i18nInstance) => {
         } else {
           state.form.error = i18nInstance.t('errors.invalidRSS');
         }
-      })
-      .finally(() => {
-        console.log(JSON.stringify(state));
       });
   } else {
     state.form.state = 'failed';
