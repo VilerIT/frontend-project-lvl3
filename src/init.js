@@ -7,7 +7,7 @@ import initView from './view.js';
 
 export default () => {
   const state = {
-    lang: 'ru',
+    lang: 'en',
     form: {
       state: 'filling',
       error: null,
