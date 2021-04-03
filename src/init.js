@@ -11,7 +11,6 @@ export default () => {
     form: {
       state: 'filling',
       error: null,
-      isSuccess: false,
     },
     updateProcess: {
       state: 'idle',

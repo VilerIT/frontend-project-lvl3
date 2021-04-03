@@ -86,6 +86,15 @@ const render = (state, i18nInstance) => {
   });
 };
 
+const clearFeedback = () => {
+  const input = document.querySelector('.form-control');
+  const feedback = document.querySelector('.feedback');
+
+  feedback.textContent = '';
+  feedback.classList.remove('text-danger', 'text-success');
+  input.classList.remove('is-invalid');
+};
+
 export default (state, i18nInstance) => {
   const submitButton = document.querySelector('[type="submit"]');
   const input = document.querySelector('.form-control');
@@ -94,13 +103,25 @@ export default (state, i18nInstance) => {
   const watchedState = onChange(state, (path, value) => {
     if (path === 'form.state') {
       switch (value) {
-        case 'filling':
-          // submitButton.disabled = false;
-          // input.disabled = false;
-          break;
         case 'pending':
-          // submitButton.disabled = true;
-          // input.disabled = true;
+          submitButton.disabled = true;
+          input.disabled = true;
+          clearFeedback();
+          break;
+        case 'success':
+          submitButton.disabled = false;
+          input.disabled = false;
+          clearFeedback();
+          feedback.textContent = i18nInstance.t('success');
+          feedback.classList.add('text-success');
+          break;
+        case 'failed':
+          submitButton.disabled = false;
+          input.disabled = false;
+          clearFeedback();
+          feedback.textContent = state.form.error;
+          input.classList.add('is-invalid');
+          feedback.classList.add('text-danger');
           break;
         default:
           throw new Error(`Unexpected state: ${value}`);
@@ -115,20 +136,9 @@ export default (state, i18nInstance) => {
         input.classList.remove('is-invalid');
         feedback.classList.remove('text-danger');
       }
-    } else if (path === 'form.isSuccess') {
-      feedback.textContent = '';
-      if (value) {
-        feedback.classList.add('text-success');
-        feedback.textContent = i18nInstance.t('success');
-      } else {
-        feedback.classList.remove('text-success');
-      }
     } else if (path === 'lang') {
-      if (state.form.error) {
-        feedback.textContent = state.form.error;
-      } else if (state.form.isSuccess) {
-        feedback.textContent = i18nInstance.t('success');
-      }
+      clearFeedback();
+      render(watchedState, i18nInstance);
     } else {
       render(watchedState, i18nInstance);
     }
