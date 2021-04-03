@@ -112,7 +112,6 @@ const enableForm = () => {
 };
 
 export default (state, i18nInstance) => {
-  const submitButton = document.querySelector('[type="submit"]');
   const input = document.querySelector('.form-control');
   const feedback = document.querySelector('.feedback');
 

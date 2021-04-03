@@ -57,6 +57,8 @@ export const handleSelectLanguage = (e, state, i18nInstance) => {
 };
 
 export const handleViewPost = (post) => {
+  $.noConflict();
+
   document.body.classList.add('modal-open');
 
   document.querySelector('.modal-title').textContent = post.title;
