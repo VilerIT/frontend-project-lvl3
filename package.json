@@ -1,7 +1,7 @@
 {
-  "name": "@hexlet/code",
+  "name": "rss-aggregator",
   "version": "1.0.0",
-  "description": "\"RSS Aggregator\" project for Hexlet.",
+  "description": "An easy service to read and aggregate RSS feeds.",
   "type": "module",
   "main": "src/init.js",
   "scripts": {
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VilerIT/frontend-project-lvl3.git"
+    "url": "git+https://github.com/VilerIT/rss-aggregator.git"
   },
   "author": "VilerIT",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/VilerIT/frontend-project-lvl3/issues"
+    "url": "https://github.com/VilerIT/rss-aggregator/issues"
   },
-  "homepage": "https://github.com/VilerIT/frontend-project-lvl3#readme",
+  "homepage": "https://github.com/VilerIT/rss-aggregator#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
