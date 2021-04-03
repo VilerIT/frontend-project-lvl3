@@ -59,15 +59,13 @@ export const handleSelectLanguage = (e, state, i18nInstance) => {
 export const handleViewPost = (post) => {
   $('body').addClass('modal-open');
 
-  const modalWindow = $('#modal');
-
   $('.modal-title').text(post.title);
 
   $('.modal-body').html(post.desc);
 
   $('.full-article').prop('href', post.url);
 
-  modalWindow.modal('show');
+  $('#modal').modal('show');
 };
 
 export const handleCloseModal = () => {
