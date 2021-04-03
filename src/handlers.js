@@ -57,19 +57,23 @@ export const handleSelectLanguage = (e, state, i18nInstance) => {
 };
 
 export const handleViewPost = (post) => {
-  $('body').addClass('modal-open');
+  document.body.classList.add('modal-open');
 
-  $('.modal-title').text(post.title);
+  document.querySelector('.modal-title').textContent = post.title;
 
-  $('.modal-body').html(post.desc);
+  document.querySelector('.modal-body').innerHTML = post.desc;
 
-  $('.full-article').prop('href', post.url);
+  document.querySelector('.full-article').href = post.url;
 
-  $('#modal').modal('show');
+  const modal = document.querySelector('#modal');
+
+  $(modal).modal({ show: true });
 };
 
 export const handleCloseModal = () => {
-  $('body').removeClass('modal-open');
+  document.body.classList.remove('modal-open');
 
-  $('#modal').modal('hide');
+  const modal = document.querySelector('#modal');
+
+  $(modal).modal({ show: false });
 };
