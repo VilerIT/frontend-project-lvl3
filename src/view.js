@@ -95,8 +95,8 @@ export default (state, i18nInstance) => {
     if (path === 'form.state') {
       switch (value) {
         case 'filling':
-          submitButton.disabled = false;
-          input.disabled = false;
+          // submitButton.disabled = false;
+          // input.disabled = false;
           break;
         case 'pending':
           submitButton.disabled = true;
