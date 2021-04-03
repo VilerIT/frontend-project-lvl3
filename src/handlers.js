@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 
 import $ from 'jquery';
+import 'bootstrap';
 
 import validateLink from './validate-link.js';
 import loadRSS from './load-rss.js';
