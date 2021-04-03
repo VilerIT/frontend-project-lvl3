@@ -95,6 +95,22 @@ const clearFeedback = () => {
   input.classList.remove('is-invalid');
 };
 
+const disableForm = () => {
+  const submitButton = document.querySelector('[type="submit"]');
+  const input = document.querySelector('.form-control');
+
+  submitButton.disabled = true;
+  input.readOnly = true;
+};
+
+const enableForm = () => {
+  const submitButton = document.querySelector('[type="submit"]');
+  const input = document.querySelector('.form-control');
+
+  submitButton.disabled = false;
+  input.readOnly = false;
+};
+
 export default (state, i18nInstance) => {
   const submitButton = document.querySelector('[type="submit"]');
   const input = document.querySelector('.form-control');
@@ -104,20 +120,17 @@ export default (state, i18nInstance) => {
     if (path === 'form.state') {
       switch (value) {
         case 'pending':
-          submitButton.disabled = true;
-          input.disabled = true;
+          disableForm();
           clearFeedback();
           break;
         case 'success':
-          submitButton.disabled = false;
-          input.disabled = false;
+          enableForm();
           clearFeedback();
           feedback.textContent = i18nInstance.t('success');
           feedback.classList.add('text-success');
           break;
         case 'failed':
-          submitButton.disabled = false;
-          input.disabled = false;
+          enableForm();
           clearFeedback();
           feedback.textContent = state.form.error;
           input.classList.add('is-invalid');
