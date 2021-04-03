@@ -99,8 +99,8 @@ export default (state, i18nInstance) => {
           // input.disabled = false;
           break;
         case 'pending':
-          submitButton.disabled = true;
-          input.disabled = true;
+          // submitButton.disabled = true;
+          // input.disabled = true;
           break;
         default:
           throw new Error(`Unexpected state: ${value}`);
