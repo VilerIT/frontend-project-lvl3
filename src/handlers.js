@@ -11,7 +11,7 @@ export const handleAddFeed = (e, state, i18nInstance) => {
   e.preventDefault();
 
   const formData = new FormData(e.target);
-  const link = formData.get('url');
+  const link = formData.get('url').trim();
 
   const error = validateLink(link, state.feeds);
   state.form.error = error;
