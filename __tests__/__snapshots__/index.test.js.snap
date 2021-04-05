@@ -1,0 +1,196 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`add rss feed 1`] = `
+"<div class=\\"modal fade\\" id=\\"modal\\" data-testid=\\"modal\\" tabindex=\\"-1\\" role=\\"dialog\\" aria-labelledby=\\"modal\\" aria-hidden=\\"true\\">
+  <div class=\\"modal-dialog\\" role=\\"document\\">
+    <div class=\\"modal-content\\">
+      <div class=\\"modal-header\\">
+        <h5 class=\\"modal-title\\" data-testid=\\"modal-title\\"></h5>
+        <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\" aria-label=\\"Close\\"><span aria-hidden=\\"true\\">×</span></button>
+      </div>
+      <div class=\\"modal-body\\" data-testid=\\"modal-body\\"></div>
+      <div class=\\"modal-footer\\"><a class=\\"btn btn-primary full-article\\" href=\\"#\\" role=\\"button\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\">Read the article</a><button type=\\"button\\" data-testid=\\"close-modal\\" class=\\"btn btn-secondary\\" data-dismiss=\\"modal\\">Close</button></div>
+    </div>
+  </div>
+</div>
+<main class=\\"flex-grow-1\\">
+  <section class=\\"container-fluid bg-dark p-5\\">
+    <div class=\\"row\\">
+      <div class=\\"col-md-10 col-lg-8 mx-auto text-white\\">
+        <h1 class=\\"display-3\\">RSS Aggregator</h1>
+        <p class=\\"lead\\">Start reading RSS today! It's easy, it's beautiful.</p>
+        <div class=\\"btn-group btn-group-toggle\\" data-toggle=\\"buttons\\" style=\\"padding-bottom: 15px;\\">
+          <label class=\\"btn btn-light active\\">
+            <input type=\\"radio\\" autocomplete=\\"off\\" data-lang=\\"en\\" checked=\\"\\"> English
+          </label>
+          <label class=\\"btn btn-outline-light\\">
+            <input type=\\"radio\\" autocomplete=\\"off\\" data-lang=\\"ru\\"> Русский
+          </label>
+        </div>
+        <form action=\\"\\" class=\\"rss-form\\" data-testid=\\"form\\">
+          <div class=\\"form-row\\">
+            <div class=\\"col\\"><input autofocus=\\"\\" required=\\"\\" name=\\"url\\" data-testid=\\"input\\" aria-label=\\"url\\" class=\\"form-control form-control-lg w-100\\" placeholder=\\"RSS link\\"></div>
+            <div class=\\"col-auto\\"><button type=\\"submit\\" aria-label=\\"add\\" class=\\"btn btn-lg btn-primary px-sm-5\\">Add</button></div>
+          </div>
+        </form>
+        <p class=\\"text-muted my-1\\">Example link: https://www.theguardian.com/international/rss</p>
+        <div class=\\"feedback text-success\\">RSS successfully loaded</div>
+      </div>
+    </div>
+  </section>
+  <section class=\\"container-fluid p-5\\">
+    <div class=\\"row\\">
+      <div class=\\"col-md-10 col-lg-8 mx-auto feeds\\"><h2>Feeds</h2><ul class=\\"list-group mb-5\\"><li class=\\"list-group-item\\" data-id=\\"1\\">
+    <h3>Test RSS 1</h3>
+    <p>Test desc 1</p>
+    </li></ul></div>
+    </div>
+    <div class=\\"row\\">
+      <div class=\\"col-md-10 col-lg-8 mx-auto posts\\"><h2>Posts</h2><ul class=\\"list-group\\"><li class=\\"list-group-item d-flex justify-content-between align-items-start\\" data-id=\\"2\\">
+    <a href=\\"https://google.com\\" class=\\"font-weight-bold\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\">
+      Woohoo
+    </a>
+    <button type=\\"button\\" class=\\"btn btn-primary btn-sm\\">View</button>
+    </li><li class=\\"list-group-item d-flex justify-content-between align-items-start\\" data-id=\\"3\\">
+    <a href=\\"https://example.com\\" class=\\"font-weight-bold\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\">
+      Hey
+    </a>
+    <button type=\\"button\\" class=\\"btn btn-primary btn-sm\\">View</button>
+    </li><li class=\\"list-group-item d-flex justify-content-between align-items-start\\" data-id=\\"4\\">
+    <a href=\\"https://yahoo.com\\" class=\\"font-weight-bold\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\">
+      LOL
+    </a>
+    <button type=\\"button\\" class=\\"btn btn-primary btn-sm\\">View</button>
+    </li></ul></div>
+    </div>
+  </section>
+</main>
+<footer class=\\"d-flex justify-content-around py-3\\">
+  <span>© 2021 Developed by <a href=\\"https://github.com/VilerIT\\">VilerIT</a> (Zaur Radjabov)</span>
+</footer>
+"
+`;
+
+exports[`init 1`] = `
+"<div class=\\"modal fade\\" id=\\"modal\\" data-testid=\\"modal\\" tabindex=\\"-1\\" role=\\"dialog\\" aria-labelledby=\\"modal\\" aria-hidden=\\"true\\">
+  <div class=\\"modal-dialog\\" role=\\"document\\">
+    <div class=\\"modal-content\\">
+      <div class=\\"modal-header\\">
+        <h5 class=\\"modal-title\\" data-testid=\\"modal-title\\"></h5>
+        <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\" aria-label=\\"Close\\"><span aria-hidden=\\"true\\">×</span></button>
+      </div>
+      <div class=\\"modal-body\\" data-testid=\\"modal-body\\"></div>
+      <div class=\\"modal-footer\\"><a class=\\"btn btn-primary full-article\\" href=\\"#\\" role=\\"button\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\">Read the article </a><button type=\\"button\\" data-testid=\\"close-modal\\" class=\\"btn btn-secondary\\" data-dismiss=\\"modal\\">Close</button></div>
+    </div>
+  </div>
+</div>
+<main class=\\"flex-grow-1\\">
+  <section class=\\"container-fluid bg-dark p-5\\">
+    <div class=\\"row\\">
+      <div class=\\"col-md-10 col-lg-8 mx-auto text-white\\">
+        <h1 class=\\"display-3\\">RSS Aggregator</h1>
+        <p class=\\"lead\\">Start reading RSS today! It's easy, it's beautiful.</p>
+        <div class=\\"btn-group btn-group-toggle\\" data-toggle=\\"buttons\\" style=\\"padding-bottom: 15px;\\">
+          <label class=\\"btn btn-light active\\">
+            <input type=\\"radio\\" autocomplete=\\"off\\" data-lang=\\"en\\" checked=\\"\\"> English
+          </label>
+          <label class=\\"btn btn-outline-light\\">
+            <input type=\\"radio\\" autocomplete=\\"off\\" data-lang=\\"ru\\"> Русский
+          </label>
+        </div>
+        <form action=\\"\\" class=\\"rss-form\\" data-testid=\\"form\\">
+          <div class=\\"form-row\\">
+            <div class=\\"col\\"><input autofocus=\\"\\" required=\\"\\" name=\\"url\\" data-testid=\\"input\\" aria-label=\\"url\\" class=\\"form-control form-control-lg w-100\\" placeholder=\\"RSS link\\"></div>
+            <div class=\\"col-auto\\"><button type=\\"submit\\" aria-label=\\"add\\" class=\\"btn btn-lg btn-primary px-sm-5\\">Add</button></div>
+          </div>
+        </form>
+        <p class=\\"text-muted my-1\\">Example link: https://www.theguardian.com/international/rss</p>
+        <div class=\\"feedback\\"></div>
+      </div>
+    </div>
+  </section>
+  <section class=\\"container-fluid p-5\\">
+    <div class=\\"row\\">
+      <div class=\\"col-md-10 col-lg-8 mx-auto feeds\\"></div>
+    </div>
+    <div class=\\"row\\">
+      <div class=\\"col-md-10 col-lg-8 mx-auto posts\\"></div>
+    </div>
+  </section>
+</main>
+<footer class=\\"d-flex justify-content-around py-3\\">
+  <span>© 2021 Developed by <a href=\\"https://github.com/VilerIT\\">VilerIT</a> (Zaur Radjabov)</span>
+</footer>
+"
+`;
+
+exports[`open/close modal 1`] = `
+"<div class=\\"modal fade\\" id=\\"modal\\" data-testid=\\"modal\\" tabindex=\\"-1\\" role=\\"dialog\\" aria-labelledby=\\"modal\\" aria-hidden=\\"true\\" style=\\"padding-right: 0px;\\">
+  <div class=\\"modal-dialog\\" role=\\"document\\">
+    <div class=\\"modal-content\\">
+      <div class=\\"modal-header\\">
+        <h5 class=\\"modal-title\\" data-testid=\\"modal-title\\">Woohoo</h5>
+        <button type=\\"button\\" class=\\"close\\" data-dismiss=\\"modal\\" aria-label=\\"Close\\"><span aria-hidden=\\"true\\">×</span></button>
+      </div>
+      <div class=\\"modal-body\\" data-testid=\\"modal-body\\">1111</div>
+      <div class=\\"modal-footer\\"><a class=\\"btn btn-primary full-article\\" href=\\"https://google.com\\" role=\\"button\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\">Read the article</a><button type=\\"button\\" data-testid=\\"close-modal\\" class=\\"btn btn-secondary\\" data-dismiss=\\"modal\\">Close</button></div>
+    </div>
+  </div>
+</div>
+<main class=\\"flex-grow-1\\">
+  <section class=\\"container-fluid bg-dark p-5\\">
+    <div class=\\"row\\">
+      <div class=\\"col-md-10 col-lg-8 mx-auto text-white\\">
+        <h1 class=\\"display-3\\">RSS Aggregator</h1>
+        <p class=\\"lead\\">Start reading RSS today! It's easy, it's beautiful.</p>
+        <div class=\\"btn-group btn-group-toggle\\" data-toggle=\\"buttons\\" style=\\"padding-bottom: 15px;\\">
+          <label class=\\"btn btn-light active\\">
+            <input type=\\"radio\\" autocomplete=\\"off\\" data-lang=\\"en\\" checked=\\"\\"> English
+          </label>
+          <label class=\\"btn btn-outline-light\\">
+            <input type=\\"radio\\" autocomplete=\\"off\\" data-lang=\\"ru\\"> Русский
+          </label>
+        </div>
+        <form action=\\"\\" class=\\"rss-form\\" data-testid=\\"form\\">
+          <div class=\\"form-row\\">
+            <div class=\\"col\\"><input autofocus=\\"\\" required=\\"\\" name=\\"url\\" data-testid=\\"input\\" aria-label=\\"url\\" class=\\"form-control form-control-lg w-100\\" placeholder=\\"RSS link\\"></div>
+            <div class=\\"col-auto\\"><button type=\\"submit\\" aria-label=\\"add\\" class=\\"btn btn-lg btn-primary px-sm-5\\">Add</button></div>
+          </div>
+        </form>
+        <p class=\\"text-muted my-1\\">Example link: https://www.theguardian.com/international/rss</p>
+        <div class=\\"feedback text-success\\">RSS successfully loaded</div>
+      </div>
+    </div>
+  </section>
+  <section class=\\"container-fluid p-5\\">
+    <div class=\\"row\\">
+      <div class=\\"col-md-10 col-lg-8 mx-auto feeds\\"><h2>Feeds</h2><ul class=\\"list-group mb-5\\"><li class=\\"list-group-item\\" data-id=\\"5\\">
+    <h3>Test RSS 1</h3>
+    <p>Test desc 1</p>
+    </li></ul></div>
+    </div>
+    <div class=\\"row\\">
+      <div class=\\"col-md-10 col-lg-8 mx-auto posts\\"><h2>Posts</h2><ul class=\\"list-group\\"><li class=\\"list-group-item d-flex justify-content-between align-items-start\\" data-id=\\"6\\">
+    <a href=\\"https://google.com\\" class=\\"font-weight-normal\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\">
+      Woohoo
+    </a>
+    <button type=\\"button\\" class=\\"btn btn-primary btn-sm\\">View</button>
+    </li><li class=\\"list-group-item d-flex justify-content-between align-items-start\\" data-id=\\"7\\">
+    <a href=\\"https://example.com\\" class=\\"font-weight-bold\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\">
+      Hey
+    </a>
+    <button type=\\"button\\" class=\\"btn btn-primary btn-sm\\">View</button>
+    </li><li class=\\"list-group-item d-flex justify-content-between align-items-start\\" data-id=\\"8\\">
+    <a href=\\"https://yahoo.com\\" class=\\"font-weight-bold\\" target=\\"_blank\\" rel=\\"noopener noreferrer\\">
+      LOL
+    </a>
+    <button type=\\"button\\" class=\\"btn btn-primary btn-sm\\">View</button>
+    </li></ul></div>
+    </div>
+  </section>
+</main>
+<footer class=\\"d-flex justify-content-around py-3\\">
+  <span>© 2021 Developed by <a href=\\"https://github.com/VilerIT\\">VilerIT</a> (Zaur Radjabov)</span>
+</footer>
+<div class=\\"modal-backdrop fade show\\"></div>"
+`;
