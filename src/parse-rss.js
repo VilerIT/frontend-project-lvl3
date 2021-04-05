@@ -1,5 +1,7 @@
 import _ from 'lodash';
 
+import purifyHTML from './purify-html.js';
+
 export default (link, content) => {
   const parser = new DOMParser();
 
@@ -24,7 +26,7 @@ export default (link, content) => {
       const postId = _.uniqueId();
 
       const data = {
-        id: postId, feedId, title: postTitle, desc: postDesc, url: postLink,
+        id: postId, feedId, title: postTitle, desc: purifyHTML(postDesc), url: postLink,
       };
 
       result.posts.push(data);
