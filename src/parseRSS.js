@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-import purifyHTML from './purify-html.js';
+import purifyHTML from './purifyHTML.js';
 
 export default (link, content) => {
   const parser = new DOMParser();

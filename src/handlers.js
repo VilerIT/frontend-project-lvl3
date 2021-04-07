@@ -3,9 +3,9 @@
 import $ from 'jquery';
 import 'bootstrap';
 
-import validateLink from './validate-link.js';
-import loadRSS from './load-rss.js';
-import updateRSS from './update-rss.js';
+import validateLink from './validateLink.js';
+import loadRSS from './loadRSS.js';
+import updateRSS from './updateRSS.js';
 
 export const handleAddFeed = (e, state, i18nInstance) => {
   e.preventDefault();
