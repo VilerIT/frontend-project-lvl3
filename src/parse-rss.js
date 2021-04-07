@@ -17,7 +17,7 @@ export default (link, content) => {
   const title = rss.querySelector('title').textContent;
   const desc = rss.querySelector('description').textContent;
 
-  const posts = rss.querySelectorAll('item')
+  rss.querySelectorAll('item')
     .forEach((post) => {
       const postTitle = post.querySelector('title').textContent;
       const postDesc = post.querySelector('description').textContent;
@@ -33,7 +33,7 @@ export default (link, content) => {
     });
 
   result.feed = {
-    id: feedId, title, desc, url: link, posts,
+    id: feedId, title, desc, url: link,
   };
 
   return result;
