@@ -12,7 +12,7 @@
     "url": "git+https://github.com/VilerIT/rss-aggregator.git"
   },
   "author": "VilerIT",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/VilerIT/rss-aggregator/issues"
   },
