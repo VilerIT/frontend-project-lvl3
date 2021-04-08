@@ -5,4 +5,6 @@
 
 RSS Aggregator is a service to read and aggregate RSS feeds ([Wikipedia](https://en.wikipedia.org/wiki/RSS)).
 
-[Try the service](https://vilerit-rss-aggregator.vercel.app/)
+Feeds are updated every 5 seconds. Two languages are supported: English and Russian.
+
+### [Try the service](https://vilerit-rss-aggregator.vercel.app/)
