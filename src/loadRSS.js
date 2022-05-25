@@ -4,7 +4,7 @@ import parseRSS from './parseRSS.js';
 
 const routes = {
   allOrigins: (url) => {
-    const result = new URL('/get', 'https://hexlet-allorigins.herokuapp.com');
+    const result = new URL('/get', 'https://allorigins.hexlet.app');
     result.searchParams.set('url', url);
     result.searchParams.set('disableCache', 'true');
     return result.toString();
